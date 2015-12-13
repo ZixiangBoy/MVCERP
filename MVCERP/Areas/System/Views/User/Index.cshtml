@@ -1,0 +1,49 @@
+﻿@model PetaPoco.Page<DbEntity.t_user>
+@{
+    ViewBag.Title = "用户管理";
+}
+
+<div class="pageheader">
+    <h1>用户管理</h1>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">您在这里:</span>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">首页</a>
+            </li>
+            <li>系统管理</li>
+            <li class="active">用户管理</li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+            @using (Ajax.BeginForm(ViewContext.RouteData.Values["Action"].ToString().ToLower()
+                                , ViewContext.RouteData.Values["Controller"].ToString().ToLower()
+                                , new AjaxOptions() {
+                                    HttpMethod = "get",
+                                    UpdateTargetId = "main-content",
+                                    InsertionMode = InsertionMode.Replace
+                                },new { Class= "form-horizontal" })) {
+            <div class="form-group">
+                <label class="col-sm-1 control-label">用户名</label>
+                <div class="col-sm-3">
+                    <input type="search" class="form-control " name="username" placeholder="用户名">
+                </div>
+
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">搜索</button>
+                </div>
+            </div>
+            }
+    </div>
+
+    <div id="main-content">
+        @Html.Partial("_Users", Model)
+    </div>
+
+
+</div>

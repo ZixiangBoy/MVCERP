@@ -1,0 +1,32 @@
+﻿
+@model PetaPoco.Pager
+
+
+@if (Model != null && Model.TotalPages != 0) {
+    <nav>
+        <ul class="pagination pagination-lg">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            @for (var i = 1; i <= Model.TotalPages; i++) {
+                    <li class=@(Model.CurrentPage == i ? "active" : "")>
+                            @Ajax.ActionLink(i.ToString(), ViewContext.RouteData.Values["Action"].ToString().ToLower()
+                                , ViewContext.RouteData.Values["Controller"].ToString().ToLower()
+                                , new { pageIndex = i, pageSize = 1 }
+                                , new AjaxOptions() {
+                                    HttpMethod = "get",
+                                    UpdateTargetId = "main-content",
+                                    InsertionMode = InsertionMode.Replace,
+                            })
+                    </li>
+                }
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+}
