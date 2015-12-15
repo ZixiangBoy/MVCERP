@@ -26,7 +26,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
+    <OutputPath>Bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -142,6 +142,7 @@
     <Compile Include="Areas\Purchase\PurchaseAreaRegistration.cs" />
     <Compile Include="Areas\Report\ReportAreaRegistration.cs" />
     <Compile Include="Areas\System\Controllers\MenuController.cs" />
+    <Compile Include="Areas\System\Controllers\RoleController.cs" />
     <Compile Include="Areas\System\Controllers\UserController.cs" />
     <Compile Include="Areas\System\SystemAreaRegistration.cs" />
     <Compile Include="Areas\Trade\TradeAreaRegistration.cs" />
@@ -174,6 +175,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\clndr.css" />
+    <Content Include="Content\default.css" />
     <Content Include="Content\dropzone.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\icheck\grey%402x.png" />
@@ -232,6 +234,8 @@
     <Content Include="Areas\System\Views\User\Index.cshtml" />
     <Content Include="Areas\System\Views\User\_Users.cshtml" />
     <Content Include="Areas\System\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\System\Views\Role\Index.cshtml" />
+    <Content Include="Areas\System\Views\Role\_Roles.cshtml" />
     <None Include="Properties\PublishProfiles\NeuBoard_full.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\html5shiv.min.js" />

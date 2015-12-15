@@ -27,7 +27,8 @@ namespace MVCERP
                       "~/Scripts/plugins/switchery/switchery.min.css",
                       "~/Content/morris.css",
                       "~/Content/animate.css",
-                      "~/Content/main.css"));
+                      "~/Content/main.css",
+                      "~/Content/default.css"));
 
 
             bundles.Add(new StyleBundle("~/plugins/dataTablesCSS").Include(

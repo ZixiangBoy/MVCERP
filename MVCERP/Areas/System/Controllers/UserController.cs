@@ -25,8 +25,9 @@ namespace MVCERP.Areas.System.Controllers
             var page = Db.Page<t_user>(pageIndex.Value, pageSize.Value, whr);
 
 
-            if (Request.IsAjaxRequest()) {
-               return PartialView("_Users", page);
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Users", page);
             }
             return View(page);
         }

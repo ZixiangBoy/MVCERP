@@ -12,12 +12,13 @@
                 <th>创建人</th>
                 <th>创建时间</th>
                 <th>启用</th>
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
             @if (Model.Items == null || Model.Items.Count < 1) {
                 <tr>
-                    <td class="col-sm-5">没有您查询数据</td>
+                    <td colspan="6" class="col-center">没有查询到数据</td>
                 </tr>
             }
             @foreach (var user in Model.Items) {
@@ -27,6 +28,9 @@
                     <td>@Html.DisplayFor(m => user.Creator)</td>
                     <td>@Html.DisplayFor(m => user.CreateDate)</td>
                     <td>@Html.CheckBoxFor(m => user.IsUsing)</td>
+                    <td>
+                    <button class="btn btn-default btn-trans btn-xs" type="button" onclick="window.location = './User/Edit'"><i class="fa fa-tag"></i></button> 
+                    <button class="btn btn-default btn-trans btn-xs" type="button"><i class="fa fa-times"></i></button></td>
                 </tr>
             }
         </tbody>

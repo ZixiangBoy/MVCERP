@@ -1,0 +1,53 @@
+﻿@model PetaPoco.Page<DbEntity.t_role>
+@{
+    ViewBag.Title = "角色管理";
+}
+
+
+<div class="pageheader">
+    <h1>角色管理</h1>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">您在这里:</span>
+        <ol class="breadcrumb">
+            <li>
+                <a href="./index.html">首页</a>
+            </li>
+            <li>系统管理</li>
+            <li class="active">角色管理</li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="panel panel-collapse">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+        @using (Ajax.BeginForm(ViewContext.RouteData.Values["Action"].ToString().ToLower()
+                                    , ViewContext.RouteData.Values["Controller"].ToString().ToLower()
+                                    , new AjaxOptions()
+                                    {
+                                        HttpMethod = "get",
+                                        UpdateTargetId = "main-content",
+                                        InsertionMode = InsertionMode.Replace
+                                    }, new { Class = "form-horizontal" }))
+        {
+            <div class="form-group">
+                <label class="col-sm-0">角色名</label>
+                <div class="col-sm-2">
+                    <input type="search" class="form-control " name="rolename" placeholder="角色名">
+                </div>
+                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+
+                <button type="submit" class="btn btn-search btn-right"><i class="glyphicon glyphicon-plus"></i>新增</button>
+            </div>
+        }
+        
+    </div>
+
+    <div id="main-content">
+        @Html.Partial("_Roles", Model)
+    </div>
+
+
+</div>
+

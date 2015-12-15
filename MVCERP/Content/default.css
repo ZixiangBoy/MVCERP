@@ -1,0 +1,15 @@
+﻿.col-sm-0{
+    float:left;min-height:1px;padding:5px 0px 0px 20px;font-weight:70;
+}
+
+.col-center{
+    text-align:center;
+}
+
+.btn-right{
+    float:right;margin-right:15px;
+}
+
+
+
+
