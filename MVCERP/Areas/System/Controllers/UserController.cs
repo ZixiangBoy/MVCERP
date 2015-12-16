@@ -32,6 +32,27 @@ namespace MVCERP.Areas.System.Controllers
             return View(page);
         }
 
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddPost(t_user user)
+        {
+            user.Creator = "admin";
+            user.CreateDate = DateTime.Now;
+            Db.Save(user);
+            return Redirect("Index");
+        }
+
+        public ActionResult Edit(string id)
+        {
+            t_user user = Db.First<t_user>("select * from t_user where id = @0 ", id);
+            return View(user);
+        }
+
         private void BuildWhr(ref string whr,string sql) {
             if (whr.Contains("where")) {
                 whr += " and " + sql;

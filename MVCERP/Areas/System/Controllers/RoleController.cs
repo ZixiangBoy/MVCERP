@@ -40,5 +40,30 @@ namespace MVCERP.Areas.System.Controllers
                 whr += " where " + sql;
             }
         }
+
+        public ActionResult Add(int? pageIndex, int? pageSize, string rolename = "")
+        {
+            return View();
+        }
+
+        public ActionResult Edit(int? pageIndex, int? pageSize, string rolename = "")
+        {
+            pageIndex = pageIndex ?? 1;
+            pageSize = pageSize ?? 1;
+            var whr = string.Empty;
+            if (!string.IsNullOrEmpty(rolename))
+            {
+                BuildWhr(ref whr, string.Format(" username = '{0}'", rolename));
+            }
+
+            var page = Db.Page<t_role>(pageIndex.Value, pageSize.Value, whr);
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Roles", page);
+            }
+            return View(page);
+        }
+
     }
 }

@@ -171,6 +171,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\System\Scripts\User.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -236,6 +237,8 @@
     <Content Include="Areas\System\Views\Menu\Edit.cshtml" />
     <Content Include="Areas\System\Views\Role\Index.cshtml" />
     <Content Include="Areas\System\Views\Role\_Roles.cshtml" />
+    <Content Include="Areas\System\Views\User\Add.cshtml" />
+    <Content Include="Areas\System\Views\User\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\NeuBoard_full.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\html5shiv.min.js" />
@@ -457,6 +460,7 @@
     <Folder Include="Areas\Report\Controllers\" />
     <Folder Include="Areas\Report\Models\" />
     <Folder Include="Areas\Report\Views\Shared\" />
+    <Folder Include="Areas\System\App_LocalResources\" />
     <Folder Include="Areas\System\Models\" />
     <Folder Include="Areas\Trade\Controllers\" />
     <Folder Include="Areas\Trade\Models\" />
