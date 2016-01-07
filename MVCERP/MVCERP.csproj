@@ -141,6 +141,7 @@
     <Compile Include="Areas\Inventory\InventoryAreaRegistration.cs" />
     <Compile Include="Areas\Purchase\PurchaseAreaRegistration.cs" />
     <Compile Include="Areas\Report\ReportAreaRegistration.cs" />
+    <Compile Include="Areas\System\Controllers\DictionaryController.cs" />
     <Compile Include="Areas\System\Controllers\MenuController.cs" />
     <Compile Include="Areas\System\Controllers\RoleController.cs" />
     <Compile Include="Areas\System\Controllers\UserController.cs" />
@@ -239,6 +240,7 @@
     <Content Include="Areas\System\Views\Role\_Roles.cshtml" />
     <Content Include="Areas\System\Views\User\Add.cshtml" />
     <Content Include="Areas\System\Views\User\Edit.cshtml" />
+    <Content Include="Areas\System\Views\Dictionary\Index.cshtml" />
     <None Include="Properties\PublishProfiles\NeuBoard_full.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\html5shiv.min.js" />
